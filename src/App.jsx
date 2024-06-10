@@ -1,9 +1,10 @@
 import "./App.css";
+import MovieWishListContainer from "./components/MovieWishListContainer";
 
 function App() {
   return (
     <>
-      <div></div>
+      <MovieWishListContainer />
     </>
   );
 }

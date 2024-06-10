@@ -1,0 +1,35 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.wrapper {
+  height: 65vh;
+  width: 100%;
+  background: black;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.scroll-container {
+  height: 40vh;
+  background: orange;
+}
+.main-card {
+  height: 100% !important;
+  overflow-y: auto;
+}
+.main-card::-webkit-scrollbar {
+  display: none;
+}
+.results {
+  /* height: 6vh; */
+  background: purple;
+}
+img {
+  width: 30%;
+  height: 100%;
+}
