@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import "./App.css";
 import MovieWishListContainer from "./components/MovieWishListContainer";
 
