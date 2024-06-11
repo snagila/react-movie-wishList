@@ -4,7 +4,8 @@ import pic from "../assets/a.jpg";
 export const MovieCard = () => {
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      {" "}
+      <Card style={{ width: "18rem", borderRadius: "none" }}>
         <Card.Img variant="top" src={pic} />
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
