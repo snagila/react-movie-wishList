@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 
-const SearchBar = ({ searchMovies, searchedMovies }) => {
+const SearchBar = ({ searchMovies, searchedMovies, background }) => {
   const [form, setForm] = useState("");
-  const [background, setBackGround] = useState(
-    "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
-  );
 
   const handleOnChange = (e) => {
     const { value } = e.target;
@@ -15,11 +12,6 @@ const SearchBar = ({ searchMovies, searchedMovies }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     searchMovies(form);
-  };
-  const bgChanger = () => {
-    const image = searchedMovies.Poster;
-
-    setBackGround(image);
   };
 
   const rowStyle = {
@@ -46,7 +38,7 @@ const SearchBar = ({ searchMovies, searchedMovies }) => {
               </Form.Group>
             </Row>
             <Row className="col-md-3">
-              <Button className="px-4" type="submit" onClick={bgChanger}>
+              <Button className="px-4" type="submit">
                 Search
               </Button>
             </Row>
