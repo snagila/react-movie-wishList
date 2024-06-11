@@ -5,7 +5,14 @@ export const MovieCard = () => {
   return (
     <>
       {" "}
-      <Card style={{ width: "18rem", borderRadius: "none" }}>
+      <Card
+        style={{
+          width: "18rem",
+          position: "absolute",
+          height: "100%",
+          borderRadius: "0",
+        }}
+      >
         <Card.Img variant="top" src={pic} />
         <Card.Body>
           <Card.Title>Card Title</Card.Title>

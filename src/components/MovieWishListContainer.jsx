@@ -8,7 +8,9 @@ const MovieWishListContainer = () => {
     <>
       <SearchBar />
       <MovieDetails />
-      <WishList />
+      <WishList title="Your Movie WishList" />
+      <WishList title="Action Movies" />
+      <WishList title="Comedy Movies" />
     </>
   );
 };
