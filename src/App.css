@@ -1,0 +1,21 @@
+.cardDescription {
+  height: 6em;
+  overflow-y: scroll;
+}
+.cardDescription::-webkit-scrollbar {
+  background: #000;
+}
+.cardBody {
+  background: rgb(0, 0, 0);
+  color: whitesmoke !important;
+}
+body {
+  background: radial-gradient(
+    circle,
+    rgba(44, 62, 80, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+* {
+  color: whitesmoke;
+}
