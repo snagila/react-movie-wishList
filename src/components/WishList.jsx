@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { MovieCard } from "./MovieCard.jsx";
 
-const WishList = ({ title }) => {
+const WishList = ({ title, searchedMovies }) => {
   return (
     <>
       <div>
@@ -14,7 +14,7 @@ const WishList = ({ title }) => {
           style={{ height: "40vh", background: "blue", position: "relative" }}
         >
           <Col>
-            <MovieCard />
+            <MovieCard searchedMovies={searchedMovies} />
           </Col>
         </Row>
       </div>

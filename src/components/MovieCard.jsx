@@ -1,7 +1,7 @@
 import { Button, Card } from "react-bootstrap";
 import pic from "../assets/a.jpg";
 
-export const MovieCard = () => {
+export const MovieCard = ({}) => {
   return (
     <>
       {" "}
@@ -14,13 +14,14 @@ export const MovieCard = () => {
         }}
       >
         <Card.Img variant="top" src={pic} />
-        <Card.Body>
+        <Card.Body className="cardBody">
           <Card.Title>Card Title</Card.Title>
-          <Card.Text>
+          <Card.Text className="cardDescription">
             Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            bulk of the
+            card'ssdfasdfgsdfgdsfgdfsgdtsdfghgfdfghgtfdfgfrdfghgfrdfgtrerftg
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="danger">Remove</Button>
         </Card.Body>
       </Card>
     </>

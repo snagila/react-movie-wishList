@@ -1,1 +1,11 @@
-
+.cardDescription {
+  height: 6em;
+  overflow-y: scroll;
+}
+.cardDescription::-webkit-scrollbar {
+  background: #000;
+}
+.cardBody {
+  background: rgb(0, 0, 0);
+  color: whitesmoke !important;
+}
