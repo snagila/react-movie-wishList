@@ -9,7 +9,7 @@ const MovieDetails = ({ searchedMovies }) => {
           <Row>
             <h3 className="mt-3 ">{searchedMovies.Plot}</h3>
           </Row>
-          <Row className="ms-1 ">Actors: {searchedMovies.Actors}</Row>
+          <Row>Actors: {searchedMovies.Actors}</Row>
         </div>
       </Col>
     </>
