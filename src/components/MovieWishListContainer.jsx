@@ -7,6 +7,7 @@ import axios from "axios";
 
 const MovieWishListContainer = () => {
   const [searchedMovies, setSearchedMovies] = useState({});
+  console.log(searchedMovies);
 
   const [background, setBackGround] = useState(
     "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
@@ -17,9 +18,14 @@ const MovieWishListContainer = () => {
       const response = await axios.get(Api_Url + formValue);
       setSearchedMovies(response.data);
       setBackGround(response.data.Poster);
+      searchedMoviesResponse(response.data);
     } catch (error) {
       alert(error.message);
     }
+  };
+  const searchedMoviesResponse = (movieObj) => {
+    console.log(movieObj);
+    return movieObj;
   };
 
   return (
@@ -31,7 +37,10 @@ const MovieWishListContainer = () => {
       />
       <MovieDetails searchedMovies={searchedMovies} />
       <hr />
-      <WishList title="Your Movie WishList" searchedMovies={searchedMovies} />
+      <WishList
+        title="Your Movie WishList"
+        searchedMoviesResponse={searchedMoviesResponse}
+      />
       <hr />
       <WishList title="Action Movies" />
       <hr />

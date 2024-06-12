@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { MovieCard } from "./MovieCard.jsx";
 
-const WishList = ({ title, searchedMovies }) => {
-  console.log(searchedMovies);
+const WishList = ({ title, searchedMoviesResponse }) => {
   return (
     <>
       <div className="">
@@ -12,7 +11,7 @@ const WishList = ({ title, searchedMovies }) => {
         </Row>
         <Row style={{ height: "40vh", position: "relative" }}>
           <Col>
-            <MovieCard />
+            <MovieCard searchedMoviesResponse={searchedMoviesResponse} />
           </Col>
         </Row>
       </div>

@@ -1,7 +1,7 @@
 import { Button, Card } from "react-bootstrap";
 import pic from "../assets/a.jpg";
 
-export const MovieCard = ({}) => {
+export const MovieCard = ({ searchedMoviesResponse }) => {
   return (
     <>
       <Card className="cardStyle">
