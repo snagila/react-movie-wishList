@@ -3,18 +3,16 @@ import { Col, Row } from "react-bootstrap";
 import { MovieCard } from "./MovieCard.jsx";
 
 const WishList = ({ title, searchedMovies }) => {
+  console.log(searchedMovies);
   return (
     <>
-      <div>
+      <div className="">
         <Row className="ms-5 ">
-          {" "}
-          <h6 className="mt-2">{title}</h6>
+          <h4 style={{ marginTop: "-4px", alignItems: "center" }}>{title}</h4>
         </Row>
-        <Row
-          style={{ height: "40vh", background: "blue", position: "relative" }}
-        >
+        <Row style={{ height: "40vh", position: "relative" }}>
           <Col>
-            <MovieCard searchedMovies={searchedMovies} />
+            <MovieCard />
           </Col>
         </Row>
       </div>
