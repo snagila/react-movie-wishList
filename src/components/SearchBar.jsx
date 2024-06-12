@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 
-const SearchBar = ({ searchMovies, searchedMovies, background }) => {
+const SearchBar = ({ searchMovies, background }) => {
   const [form, setForm] = useState("");
 
   const handleOnChange = (e) => {
