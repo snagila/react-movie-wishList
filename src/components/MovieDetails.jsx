@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
-const MovieDetails = ({ searchedMovies }) => {
+const MovieDetails = ({ searchedMovies, handleOnClick }) => {
   return (
     <>
       <Col style={{ height: "35vh" }} className="movieDetails">
@@ -20,6 +20,15 @@ const MovieDetails = ({ searchedMovies }) => {
           <Row className="ms-1">Writer: {searchedMovies.Writer}</Row>
           <Row className="ms-1">imdbRating: {searchedMovies.imdbRating}</Row>
           <Row className="ms-1">Awards: {searchedMovies.Awards}</Row>
+        </div>
+        <div className=" ms-5 mt-2">
+          <button className="btn btn-warning " onClick={handleOnClick}>
+            + Action
+          </button>
+
+          <button className="btn btn-danger ms-3" onClick={handleOnClick}>
+            + Comedy
+          </button>
         </div>
       </Col>
     </>

@@ -1,3 +1,10 @@
+:root {
+  --main-color: radial-gradient(
+    circle,
+    rgba(44, 62, 80, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
 .cardDescription {
   height: 6em;
   overflow-y: scroll;
@@ -10,11 +17,7 @@
   color: whitesmoke !important;
 }
 body {
-  background: radial-gradient(
-    circle,
-    rgba(44, 62, 80, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  background: var(--main-color);
 }
 * {
   color: whitesmoke;
@@ -22,9 +25,15 @@ body {
 
 .cardStyle {
   width: 18rem;
-  position: absolute;
+
   height: 100%;
   border-radius: 2px;
   padding: 10px;
   background: radial-gradient(rgba(44, 62, 80, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.mainCard {
+  background: var(--main-color);
+}
+.mainCardRow {
+  overflow-x: scroll;
 }

@@ -1,7 +1,7 @@
 import { Button, Card } from "react-bootstrap";
 import pic from "../assets/a.jpg";
 
-export const MovieCard = ({ searchedMoviesResponse }) => {
+export const MovieCard = ({}) => {
   return (
     <>
       <Card className="cardStyle">
@@ -16,9 +16,6 @@ export const MovieCard = ({ searchedMoviesResponse }) => {
           <Button variant="danger">Remove</Button>
         </Card.Body>
       </Card>
-      {/* // searchedMovies={searchedMovies}
-      // title={searchedMovies.Title}
-      // description={searchedMovies.Plot} */}
     </>
   );
 };

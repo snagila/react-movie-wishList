@@ -6,13 +6,17 @@ import { Api_Url } from "../Api";
 import axios from "axios";
 
 const MovieWishListContainer = () => {
-  const [searchedMovies, setSearchedMovies] = useState({});
-  console.log(searchedMovies);
-  const searchedMoviesLength = Object.keys(searchedMovies).length;
-
   const [background, setBackGround] = useState(
     "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
   );
+  const [searchedMovies, setSearchedMovies] = useState({});
+  console.log(searchedMovies);
+  const [WishListArg, setWishListArg] = useState([]);
+  const handleOnClick = () => {
+    setWishListArg([...WishListArg, searchedMovies]);
+  };
+  console.log(WishListArg);
+  const searchedMoviesLength = Object.keys(searchedMovies).length;
 
   const searchMovies = async (formValue) => {
     try {
@@ -23,10 +27,6 @@ const MovieWishListContainer = () => {
       alert(error.message);
     }
   };
-  // const searchedMoviesResponse = (movieObj) => {
-  //   console.log(movieObj);
-  //   return movieObj;
-  // };
 
   return (
     <>
@@ -35,12 +35,15 @@ const MovieWishListContainer = () => {
         searchedMovies={searchedMovies}
         background={background}
       />
-      {searchedMoviesLength > 1 && (
+      {/* {searchedMoviesLength > 1 && (
         <MovieDetails searchedMovies={searchedMovies} />
-      )}
-
+      )} */}
+      <MovieDetails
+        searchedMovies={searchedMovies}
+        handleOnClick={handleOnClick}
+      />
       <hr />
-      <WishList title="Your Movie WishList" searchedMovies={searchedMovies} />
+      <WishList title="Your Movie WishList" WishListArg={WishListArg} />
       {/* <hr />
       <WishList title="Action Movies" />
       <hr />
