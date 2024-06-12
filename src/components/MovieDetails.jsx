@@ -22,11 +22,17 @@ const MovieDetails = ({ searchedMovies, handleOnClick }) => {
           <Row className="ms-1">Awards: {searchedMovies.Awards}</Row>
         </div>
         <div className=" ms-5 mt-2">
-          <button className="btn btn-warning " onClick={handleOnClick}>
+          <button
+            className="btn btn-warning "
+            onClick={() => handleOnClick("Action")}
+          >
             + Action
           </button>
 
-          <button className="btn btn-danger ms-3" onClick={handleOnClick}>
+          <button
+            className="btn btn-danger ms-3"
+            onClick={() => handleOnClick("Comedy")}
+          >
             + Comedy
           </button>
         </div>

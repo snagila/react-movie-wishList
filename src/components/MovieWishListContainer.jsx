@@ -44,10 +44,18 @@ const MovieWishListContainer = () => {
       />
       <hr />
       <WishList title="Your Movie WishList" WishListArg={WishListArg} />
-      {/* <hr />
-      <WishList title="Action Movies" />
       <hr />
-      <WishList title="Comedy Movies" /> */}
+      <WishList
+        title="Action Movies"
+        Genre="Action"
+        WishListArg={WishListArg}
+      />
+      <hr />
+      <WishList
+        title="Comedy Movies"
+        Genre="Comedy"
+        WishListArg={WishListArg}
+      />
     </>
   );
 };

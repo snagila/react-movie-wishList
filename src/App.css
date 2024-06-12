@@ -33,7 +33,11 @@ body {
 }
 .mainCard {
   background: var(--main-color);
+  margin-left: 30px;
 }
 .mainCardRow {
   overflow-x: scroll;
+}
+.mainCardRow::-webkit-scrollbar {
+  background: none;
 }
