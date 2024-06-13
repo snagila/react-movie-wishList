@@ -5,6 +5,22 @@
     rgba(0, 0, 0, 1) 100%
   );
 }
+/* root css */
+body {
+  background: var(--main-color);
+}
+* {
+  color: whitesmoke;
+}
+/* searchBar components */
+.formInputField {
+  background-color: darkgray !important;
+  border: none !important;
+}
+.formInputField::placeholder {
+  color: white !important;
+}
+
 .cardDescription {
   height: 6em;
   overflow-y: scroll;
@@ -16,20 +32,14 @@
   background: rgb(0, 0, 0);
   color: whitesmoke !important;
 }
-body {
-  background: var(--main-color);
-}
-* {
-  color: whitesmoke;
-}
 
 .cardStyle {
   width: 18rem;
-
   height: 100%;
   border-radius: 8px;
   padding: 10px;
   background: radial-gradient(rgba(44, 62, 80, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  color: crimson;
 }
 .mainCard {
   background: var(--main-color);
@@ -40,4 +50,5 @@ body {
 }
 .mainCardRow::-webkit-scrollbar {
   background: none;
+  margin: auto;
 }

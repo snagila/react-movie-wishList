@@ -33,7 +33,7 @@ const SearchBar = ({ searchMovies, background }) => {
                 <Form.Control
                   type="text"
                   placeholder="Enter Movie Title"
-                  className="px-5"
+                  className="px-5 formInputField"
                   name="inputfield"
                   onChange={handleOnChange}
                   value={form}
@@ -41,7 +41,7 @@ const SearchBar = ({ searchMovies, background }) => {
               </Form.Group>
             </Row>
             <Row className="col-md-3">
-              <Button className="px-4" type="submit">
+              <Button className="px-4 " type="submit">
                 Search
               </Button>
             </Row>

@@ -7,7 +7,7 @@ const MovieDetails = ({ searchedMovies, handleOnClick, WishListArg }) => {
   );
   return (
     <>
-      <Col style={{ height: "35vh" }} className="movieDetails">
+      <Col style={{ height: "35vh" }} className="movieDetails ">
         <div className="ms-5">
           <Row>
             <h2 className="mt-3 " style={{ color: "red" }}>
@@ -26,7 +26,7 @@ const MovieDetails = ({ searchedMovies, handleOnClick, WishListArg }) => {
         </div>
         <div className=" ms-5 mt-2">
           <button
-            className="btn btn-warning "
+            className="btn btn-danger "
             onClick={() => handleOnClick("Action")}
             disabled={disableBtns}
           >
@@ -34,7 +34,7 @@ const MovieDetails = ({ searchedMovies, handleOnClick, WishListArg }) => {
           </button>
 
           <button
-            className="btn btn-danger ms-3"
+            className="btn btn-warning ms-3"
             onClick={() => handleOnClick("Comedy")}
             disabled={disableBtns}
           >
