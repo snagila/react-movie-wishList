@@ -10,13 +10,6 @@ const MovieWishListContainer = () => {
     "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
   );
   const [searchedMovies, setSearchedMovies] = useState({});
-  console.log(searchedMovies);
-  const [WishListArg, setWishListArg] = useState([]);
-  const handleOnClick = () => {
-    setWishListArg([...WishListArg, searchedMovies]);
-  };
-  console.log(WishListArg);
-  const searchedMoviesLength = Object.keys(searchedMovies).length;
 
   const searchMovies = async (formValue) => {
     try {
@@ -27,6 +20,23 @@ const MovieWishListContainer = () => {
       alert(error.message);
     }
   };
+
+  const [WishListArg, setWishListArg] = useState([]);
+
+  const handleOnClick = (genre) => {
+    const movieWithGenre = { ...searchedMovies, genre: genre };
+    setWishListArg([...WishListArg, movieWithGenre]);
+  };
+
+  const handleOnDelete = (searchedMovies) => {
+    const updateAfterDelete = WishListArg.filter(
+      (item) => item.imdbID !== searchedMovies.imdbID
+    );
+    setWishListArg(updateAfterDelete);
+    console.log(searchedMovies.imdbID);
+  };
+
+  const searchedMoviesLength = Object.keys(searchedMovies).length;
 
   return (
     <>
@@ -43,18 +53,27 @@ const MovieWishListContainer = () => {
         handleOnClick={handleOnClick}
       />
       <hr />
-      <WishList title="Your Movie WishList" WishListArg={WishListArg} />
+      <WishList
+        title="Your Movie WishList"
+        WishListArg={WishListArg}
+        handleOnDelete={handleOnDelete}
+        searchedMovies={searchedMovies}
+      />
       <hr />
       <WishList
         title="Action Movies"
-        Genre="Action"
         WishListArg={WishListArg}
+        genre="Action"
+        handleOnDelete={handleOnDelete}
+        searchedMovies={searchedMovies}
       />
       <hr />
       <WishList
         title="Comedy Movies"
-        Genre="Comedy"
         WishListArg={WishListArg}
+        genre="Comedy"
+        handleOnDelete={handleOnDelete}
+        searchedMovies={searchedMovies}
       />
     </>
   );
