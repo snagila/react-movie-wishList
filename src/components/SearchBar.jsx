@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 
 const SearchBar = ({ searchMovies, background }) => {
-  const [form, setForm] = useState("");
+  const initialState = "";
+  const [form, setForm] = useState(initialState);
 
   const handleOnChange = (e) => {
     const { value } = e.target;
@@ -12,14 +13,15 @@ const SearchBar = ({ searchMovies, background }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     searchMovies(form);
+    setForm(initialState);
   };
 
   const rowStyle = {
     height: "60vh",
     backgroundImage: `url(${background})`,
+    backgroundPosition: "center",
     backgroundRepeat: "repeat",
     backgroundSize: "contain",
-    backgroundPosition: "center",
   };
   return (
     <>
@@ -34,6 +36,7 @@ const SearchBar = ({ searchMovies, background }) => {
                   className="px-5"
                   name="inputfield"
                   onChange={handleOnChange}
+                  value={form}
                 />
               </Form.Group>
             </Row>

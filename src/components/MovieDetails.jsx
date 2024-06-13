@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
-const MovieDetails = ({ searchedMovies, handleOnClick }) => {
+const MovieDetails = ({ searchedMovies, handleOnClick, WishListArg }) => {
+  const disableBtns = WishListArg.find(
+    (item) => item.imdbID === searchedMovies.imdbID
+  );
   return (
     <>
       <Col style={{ height: "35vh" }} className="movieDetails">
@@ -25,6 +28,7 @@ const MovieDetails = ({ searchedMovies, handleOnClick }) => {
           <button
             className="btn btn-warning "
             onClick={() => handleOnClick("Action")}
+            disabled={disableBtns}
           >
             + Action
           </button>
@@ -32,6 +36,7 @@ const MovieDetails = ({ searchedMovies, handleOnClick }) => {
           <button
             className="btn btn-danger ms-3"
             onClick={() => handleOnClick("Comedy")}
+            disabled={disableBtns}
           >
             + Comedy
           </button>

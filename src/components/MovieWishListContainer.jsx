@@ -28,12 +28,11 @@ const MovieWishListContainer = () => {
     setWishListArg([...WishListArg, movieWithGenre]);
   };
 
-  const handleOnDelete = (searchedMovies) => {
+  const handleOnDelete = (movie) => {
     const updateAfterDelete = WishListArg.filter(
-      (item) => item.imdbID !== searchedMovies.imdbID
+      (item) => item.imdbID !== movie.imdbID
     );
     setWishListArg(updateAfterDelete);
-    console.log(searchedMovies.imdbID);
   };
 
   const searchedMoviesLength = Object.keys(searchedMovies).length;
@@ -45,13 +44,14 @@ const MovieWishListContainer = () => {
         searchedMovies={searchedMovies}
         background={background}
       />
-      {/* {searchedMoviesLength > 1 && (
-        <MovieDetails searchedMovies={searchedMovies} />
-      )} */}
-      <MovieDetails
-        searchedMovies={searchedMovies}
-        handleOnClick={handleOnClick}
-      />
+      {searchedMoviesLength > 1 && (
+        <MovieDetails
+          searchedMovies={searchedMovies}
+          handleOnClick={handleOnClick}
+          WishListArg={WishListArg}
+        />
+      )}
+
       <hr />
       <WishList
         title="Your Movie WishList"
