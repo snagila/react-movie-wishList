@@ -4,16 +4,20 @@ import MovieDetails from "./MovieDetails";
 import WishList from "./WishList";
 import { Api_Url } from "../Api";
 import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 const MovieWishListContainer = () => {
   const [background, setBackGround] = useState(
     "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
   );
   const [searchedMovies, setSearchedMovies] = useState({});
+  const [isLoading, setIsLoading] = useState();
 
   const searchMovies = async (formValue) => {
     try {
+      setIsLoading(true);
       const response = await axios.get(Api_Url + formValue);
+      setIsLoading(false);
       setSearchedMovies(response.data);
       setBackGround(response.data.Poster);
     } catch (error) {
@@ -44,15 +48,23 @@ const MovieWishListContainer = () => {
         searchedMovies={searchedMovies}
         background={background}
       />
-      {searchedMoviesLength > 1 && (
-        <MovieDetails
-          searchedMovies={searchedMovies}
-          handleOnClick={handleOnClick}
-          WishListArg={WishListArg}
-        />
+
+      {isLoading === true ? (
+        <div className="spinner mt-2">
+          <Spinner animation="border" variant="danger" />
+        </div>
+      ) : (
+        searchedMoviesLength > 1 && (
+          <MovieDetails
+            searchedMovies={searchedMovies}
+            handleOnClick={handleOnClick}
+            WishListArg={WishListArg}
+          />
+        )
       )}
 
       <hr />
+
       <WishList
         title="Your Movie WishList"
         WishListArg={WishListArg}
@@ -60,6 +72,7 @@ const MovieWishListContainer = () => {
         searchedMovies={searchedMovies}
       />
       <hr />
+
       <WishList
         title="Action Movies"
         WishListArg={WishListArg}
@@ -67,7 +80,9 @@ const MovieWishListContainer = () => {
         handleOnDelete={handleOnDelete}
         searchedMovies={searchedMovies}
       />
+
       <hr />
+
       <WishList
         title="Comedy Movies"
         WishListArg={WishListArg}
